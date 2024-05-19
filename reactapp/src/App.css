@@ -8,28 +8,47 @@
     pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
 .App-header {
     background-color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    margin-bottom: 1rem;
+    border-radius: calc(var(--layer-corner-radius, 4) * 1px);
 }
 
-@keyframes App-logo-spin {
+@keyframes reduce-height {
     from {
-        transform: rotate(0deg);
+        height: 20vmin;
     }
     to {
-        transform: rotate(360deg);
+        height: 10vmin;
+    }
+}
+
+@keyframes add-shadow {
+    from {
+        box-shadow: 0 0 0;
+    }
+    to {
+        box-shadow: var(
+            --elevation-shadow-card-rest,
+            0 0 2px rgba(0, 0, 0, 0.12),
+            0 calc(4 * 0.5px) calc((4 * 1px)) rgba(0, 0, 0, 0.14)
+        );
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: reduce-height linear both;
+        animation-timeline: scroll();
+        animation-range: 0 150px;
+    }
+
+    .App-header {
+        animation: add-shadow linear both;
+        animation-timeline: scroll();
+        animation-range: 0 150px;
     }
 }
