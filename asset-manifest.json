@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/BlazorAndReact/static/css/main.1d9be091.css",
+    "main.js": "/BlazorAndReact/static/js/main.35e68194.js",
+    "static/js/453.785134cd.chunk.js": "/BlazorAndReact/static/js/453.785134cd.chunk.js",
+    "static/media/logo.svg": "/BlazorAndReact/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/BlazorAndReact/index.html",
+    "main.1d9be091.css.map": "/BlazorAndReact/static/css/main.1d9be091.css.map",
+    "main.35e68194.js.map": "/BlazorAndReact/static/js/main.35e68194.js.map",
+    "453.785134cd.chunk.js.map": "/BlazorAndReact/static/js/453.785134cd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d9be091.css",
+    "static/js/main.35e68194.js"
+  ]
+}
