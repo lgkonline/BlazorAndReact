@@ -1,2 +1,17 @@
 @import '_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.bundle.scp.css';
 
+/* /MyTodo.razor.rz.scp.css */
+.list[b-06smal0hnb] {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+}
+
+.item[b-06smal0hnb] {
+    display: flex;
+    align-items: center;
+}
+
+.item-entry[b-06smal0hnb] {
+    flex-grow: 1;
+}
