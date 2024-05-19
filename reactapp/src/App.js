@@ -8,9 +8,10 @@ function App() {
                 <img src={logo} className="App-logo" alt="logo" />
             </header>
 
+            <fluent-design-theme></fluent-design-theme>
             <my-theme></my-theme>
             <my-todo
-                Title="From React app as Web Component"
+                Headline="From React app as Web Component"
                 AccentTone="#ff0000"
             ></my-todo>
 

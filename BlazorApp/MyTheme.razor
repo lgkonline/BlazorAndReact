@@ -1,13 +1,6 @@
 @using Microsoft.FluentUI.AspNetCore.Components.DesignTokens
 
-<div class="my-theme">
-    @ChildContent
-</div>
-
 @code {
-    [Parameter]
-    public RenderFragment? ChildContent { get; set; }
-
     [Inject]
     NeutralBaseColor neutralBaseColor { get; set; } = default!;
 

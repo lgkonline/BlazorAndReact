@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="NewEntry" xml:space="preserve">
+    <value>Neuer Eintrag</value>
+  </data>
+  <data name="EnterSomething" xml:space="preserve">
+    <value>Etwas eingeben</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="DeleteItem" xml:space="preserve">
+    <value>Eintrag entfernen</value>
+  </data>
+  <data name="AddSomething" xml:space="preserve">
+    <value>Etwas hinzufügen</value>
+  </data>
+</root>

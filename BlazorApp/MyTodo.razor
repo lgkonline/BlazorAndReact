@@ -1,30 +1,50 @@
-<FluentCard>
-    <h2 class="headline">@Title</h2>
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<BlazorApp.Localization.SharedResources> Localizer
 
-    <ul>
+<FluentCard>
+    <h2 class="headline">@Headline</h2>
+
+    <ul class="list">
         @foreach (string item in list)
         {
-            <li>@item</li>
+            <li class="item"><span class="item-entry">@item</span>
+                <FluentButton Appearance="Appearance.Lightweight" IconEnd="@(new Icons.Regular.Size16.Delete())"
+                    Title="Delete item" OnClick="@(() => list.Remove(item))" />
+            </li>
         }
     </ul>
 
-    <FluentStack>
-        <FluentTextField @bind-Value=newEntry AriaLabel="New entry" />
-        <FluentButton Appearance="Appearance.Accent" OnClick=addEntry>Add</FluentButton>
-
-    </FluentStack>
+    <EditForm Model=@this OnValidSubmit=addEntry>
+        <FluentStack>
+            <FluentTextField @bind-Value=newEntry Immediate AriaLabel="@Localizer["NewEntry"]" style="flex-grow: 1;"
+                Placeholder="@Localizer["EnterSomething"]" />
+            <FluentButton Appearance="Appearance.Accent" Type="ButtonType.Submit">@Localizer["Add"]
+            </FluentButton>
+        </FluentStack>
+    </EditForm>
 </FluentCard>
 
 @code {
     [Parameter]
-    public required string Title { get; set; }
+    public required string Headline { get; set; }
 
-    List<string> list = new() { "Add something" };
+    List<string> list = new();
+    protected override void OnInitialized()
+    {
+        list = new()
+{
+Localizer["AddSomething"] ?? ""
+};
+    }
+
     string newEntry = "";
 
     void addEntry()
     {
-        list.Add(newEntry);
-        newEntry = "";
+        if (!string.IsNullOrWhiteSpace(newEntry))
+        {
+            list.Add(newEntry);
+            newEntry = "";
+        }
     }
 }
