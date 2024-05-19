@@ -1,0 +1,25 @@
+<h2>@Title</h2>
+
+<ul>
+    @foreach (string item in list)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<input @bind-value=newEntry aria-label="New entry" />
+<button @onclick=addEntry>Add</button>
+
+@code {
+    [Parameter]
+    public required string Title { get; set; }
+
+    List<string> list = new() { "Add something" };
+    string newEntry = "";
+
+    void addEntry()
+    {
+        list.Add(newEntry);
+        newEntry = "";
+    }
+}
