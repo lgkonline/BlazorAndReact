@@ -1,14 +1,19 @@
-<h2>@Title</h2>
+<FluentCard>
+    <h2 class="headline">@Title</h2>
 
-<ul>
-    @foreach (string item in list)
-    {
-        <li>@item</li>
-    }
-</ul>
+    <ul>
+        @foreach (string item in list)
+        {
+            <li>@item</li>
+        }
+    </ul>
 
-<input @bind-value=newEntry aria-label="New entry" />
-<button @onclick=addEntry>Add</button>
+    <FluentStack>
+        <FluentTextField @bind-Value=newEntry AriaLabel="New entry" />
+        <FluentButton Appearance="Appearance.Accent" OnClick=addEntry>Add</FluentButton>
+
+    </FluentStack>
+</FluentCard>
 
 @code {
     [Parameter]

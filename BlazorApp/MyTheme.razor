@@ -1,0 +1,27 @@
+@using Microsoft.FluentUI.AspNetCore.Components.DesignTokens
+
+<div class="my-theme">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Inject]
+    NeutralBaseColor neutralBaseColor { get; set; } = default!;
+
+    [Inject]
+    AccentBaseColor accentBaseColor { get; set; } = default!;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await neutralBaseColor.WithDefault("#808080".ToSwatch());
+            await accentBaseColor.WithDefault("#ff00ff".ToSwatch());
+
+            StateHasChanged();
+        }
+    }
+}
